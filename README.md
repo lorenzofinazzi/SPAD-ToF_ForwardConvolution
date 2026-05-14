@@ -1,7 +1,7 @@
 # SPAD-ToF_ForwardConvolution
 MATLAB code for forward-convolution dispersion analysis through TCSPC
 
-InGaAs folder (results for 1550 nm range) and Si folder (results for 780 nm range).
+InGaAs folder (results/code for 1550 nm range) and Si folder (results/code for 780 nm range).
 
 Indications are valid for both folders.
 DataPreparation.m code uploads in MATLAB environment most of the parameters. Manipulation is performed to make data usable. The script produce DataForAnalysis.mat file. This contains manipulated data for dispersion analysis.
