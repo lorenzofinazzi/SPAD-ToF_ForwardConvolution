@@ -96,7 +96,7 @@ I_2 = abs(Et_out_t_2).^2;
 T = readmatrix('IRF_SPAD_Si.txt'); 
 time_IRF = T(:,1)*1e-12; %s
 time_IRF = max(time_IRF)-time_IRF; %start time axis from 0
-IRF_data = T(:,2);
+IRF_data = T(:,2)/max(T(:,2)); %normalize IRF
 
 t_IRF = (min(time_IRF):5e-15:max(time_IRF)); %time axis for convolution
 IRF_interp = interp1(time_IRF, IRF_data, t_IRF);
@@ -166,5 +166,5 @@ output_FWHMdiff (i, 2) = delta_FWHM %ps
 
 plot(t_out, M_full_2) %simulated
 hold on
-plot(t_eq+6388, I_measured) %measured %6388 is an empirical number to align the curves, which are based on...
+plot(t_eq+6530, I_measured) %measured %6530 is an empirical number to align the curves, which are based on...
 %... two different time axis, change accordingly)

@@ -67,6 +67,7 @@ t_min = min(time);
 t_max = max(time);
 t_eq = linspace(t_min, t_max, length(f_eq)); % same number of point of f_eq
 Et_meas = sqrt(intensity);          % measured electric field
+Et_meas = sgolayfilt(Et_meas, 3, 11);  % smoothing curves (pay attention not to change pulse FWHM!)
 Et_interp = interp1(time, Et_meas, t_eq, 'pchip'); % interpolation on fitted time
 Et_interp = flip(Et_interp/max(Et_interp)); % normalization
 
